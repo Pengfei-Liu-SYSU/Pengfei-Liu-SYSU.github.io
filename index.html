@@ -329,7 +329,27 @@
 .MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
 .MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
 </style> -->
-	
+    <style>
+        /* 样式部分 */
+        #language-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #language-toggle:hover {
+            background-color: #0056b3;
+        }
+
+        .masthead {
+            position: relative;
+        }
+    </style>
 </head>
     
 
@@ -579,26 +599,26 @@ Zhixiang Ren, Yiming Ren, <strong>Pengfei Liu</strong>, Qi Shu, Huijuan Ma, Huan
     <!-- JavaScript 部分 -->
 
 
+
     <script>
-        // 等待页面完全加载后再执行
+        // 等待文档完全加载
         document.addEventListener("DOMContentLoaded", function () {
-            document.documentElement.lang = 'en'; // 默认设置为英文
-
-            // 中英文切换的函数
+            // 语言切换函数
             function toggleLanguage() {
-                const currentLang = document.documentElement.lang;
+                const languageToggle = document.getElementById("language-toggle");
 
-                if (currentLang === 'en') {
-                    document.documentElement.lang = 'zh'; // 切换为中文
+                if (!languageToggle) return; // 如果找不到元素，退出
+
+                // 检查当前语言并切换
+                if (languageToggle.textContent === "English/中文") {
                     setLanguageToChinese();
                 } else {
-                    document.documentElement.lang = 'en'; // 切换为英文
                     setLanguageToEnglish();
                 }
             }
-
-            // 设置页面为中文
             function setLanguageToChinese() {
+                const languageToggle = document.getElementById("language-toggle");
+                if (languageToggle) {languageToggle.textContent = "English/中文";
                 if (document.getElementById('home-link')) document.getElementById('home-link').textContent = '首页';
                 if (document.getElementById('about-me-link')) document.getElementById('about-me-link').textContent = '关于我';
                 if (document.getElementById('news-link')) document.getElementById('news-link').textContent = '新闻';
@@ -613,6 +633,8 @@ Zhixiang Ren, Yiming Ren, <strong>Pengfei Liu</strong>, Qi Shu, Huijuan Ma, Huan
 
             // 设置页面为英文
             function setLanguageToEnglish() {
+                const languageToggle = document.getElementById("language-toggle");
+                if (languageToggle) {languageToggle.textContent = "English/中文";
                 if (document.getElementById('home-link')) document.getElementById('home-link').textContent = 'Homepage';
                 if (document.getElementById('about-me-link')) document.getElementById('about-me-link').textContent = 'About Me';
                 if (document.getElementById('news-link')) document.getElementById('news-link').textContent = 'News';
@@ -625,8 +647,8 @@ Zhixiang Ren, Yiming Ren, <strong>Pengfei Liu</strong>, Qi Shu, Huijuan Ma, Huan
                 if (document.getElementById('about-me-text')) document.getElementById('about-me-text').textContent = 'Pengfei Liu (刘朋飞) is a Ph.D. candidate at the National Supercomputing Center in Guangzhou (NSCC-GZ) and the School of Computer Science and Engineering (CSE), Sun Yat-sen University (SYSU), under the supervision of Associate Professor Jun Tao. Pengfei Liu concurrently serves as an intern at Peng Cheng Laboratory (PCL) and is a member of the Peng Cheng Cloud-brain Project (PCL-brain), mentored by Dr. Zhixiang Ren.';
             }
 
-            // 将语言切换函数绑定到点击事件
-            document.getElementById("language-toggle").onclick = toggleLanguage;
+            // 初始化默认语言
+            toggleLanguage();
         });
     </script>
 
