@@ -378,7 +378,6 @@
     <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-       <a href="#" id="language-toggle" onclick="toggleLanguage()">English/中文</a>
       <nav id="site-nav" class="greedy-nav">
         <button class="hidden" count="0"><div class="navicon"></div></button>
         <ul class="visible-links">
@@ -595,79 +594,6 @@ Zhixiang Ren, Yiming Ren, <strong>Pengfei Liu</strong>, Qi Shu, Huijuan Ma, Huan
     </div>
 
     <script src="./Pengfei Liu - Homepage_files/main.min.js"></script>
-
-    <!-- JavaScript 部分 -->
-
-
-
-    <script>
-        // 等待文档完全加载
-        document.addEventListener("DOMContentLoaded", function () {
-            // 语言切换函数
-            function toggleLanguage() {
-                const languageToggle = document.getElementById("language-toggle");
-
-                if (!languageToggle) return; // 如果找不到元素，退出
-
-                // 检查当前语言并切换
-                if (languageToggle.textContent === "English/中文") {
-                    setLanguageToChinese();
-                } else {
-                    setLanguageToEnglish();
-                }
-            }
-            function setLanguageToChinese() {
-                const languageToggle = document.getElementById("language-toggle");
-                if (languageToggle) {languageToggle.textContent = "English/中文";
-                if (document.getElementById('home-link')) document.getElementById('home-link').textContent = '首页';
-                if (document.getElementById('about-me-link')) document.getElementById('about-me-link').textContent = '关于我';
-                if (document.getElementById('news-link')) document.getElementById('news-link').textContent = '新闻';
-                if (document.getElementById('publications-link')) document.getElementById('publications-link').textContent = '出版物';
-                if (document.getElementById('educations-link')) document.getElementById('educations-link').textContent = '教育背景';
-                if (document.getElementById('internships-link')) document.getElementById('internships-link').textContent = '实习经历';
-                if (document.getElementById('author-name')) document.getElementById('author-name').textContent = '刘朋飞';
-                if (document.getElementById('author-bio')) document.getElementById('author-bio').textContent = '中山大学';
-                if (document.getElementById('about-me-title')) document.getElementById('about-me-title').textContent = '关于我';
-                if (document.getElementById('about-me-text')) document.getElementById('about-me-text').textContent = '刘朋飞是中山大学计算机科学与工程学院的博士生，现于广州国家超级计算中心（NSCC-GZ）进行研究，在陶俊副教授指导下攻读博士学位。刘朋飞目前也在鹏程实验室（PCL）实习，并且是鹏程云脑项目成员，受任志强博士的指导。';
-            }
-
-            // 设置页面为英文
-            function setLanguageToEnglish() {
-                const languageToggle = document.getElementById("language-toggle");
-                if (languageToggle) {languageToggle.textContent = "English/中文";
-                if (document.getElementById('home-link')) document.getElementById('home-link').textContent = 'Homepage';
-                if (document.getElementById('about-me-link')) document.getElementById('about-me-link').textContent = 'About Me';
-                if (document.getElementById('news-link')) document.getElementById('news-link').textContent = 'News';
-                if (document.getElementById('publications-link')) document.getElementById('publications-link').textContent = 'Publications';
-                if (document.getElementById('educations-link')) document.getElementById('educations-link').textContent = 'Educations';
-                if (document.getElementById('internships-link')) document.getElementById('internships-link').textContent = 'Internships';
-                if (document.getElementById('author-name')) document.getElementById('author-name').textContent = 'Pengfei Liu';
-                if (document.getElementById('author-bio')) document.getElementById('author-bio').textContent = 'Sun Yat-sen University';
-                if (document.getElementById('about-me-title')) document.getElementById('about-me-title').textContent = 'About Me';
-                if (document.getElementById('about-me-text')) document.getElementById('about-me-text').textContent = 'Pengfei Liu (刘朋飞) is a Ph.D. candidate at the National Supercomputing Center in Guangzhou (NSCC-GZ) and the School of Computer Science and Engineering (CSE), Sun Yat-sen University (SYSU), under the supervision of Associate Professor Jun Tao. Pengfei Liu concurrently serves as an intern at Peng Cheng Laboratory (PCL) and is a member of the Peng Cheng Cloud-brain Project (PCL-brain), mentored by Dr. Zhixiang Ren.';
-            }
-
-            // 初始化默认语言
-            toggleLanguage();
-        });
-    </script>
-
-    <style>
-        /* 样式部分 */
-        #language-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 16px;
-            color: #007BFF;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        #language-toggle:hover {
-            color: #0056b3;
-        }
-    </style>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="./Pengfei Liu - Homepage_files/js"></script>
